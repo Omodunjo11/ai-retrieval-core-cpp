@@ -1,7 +1,7 @@
 CXX = clang++
-CXXFLAGS = -O3 -march=native -ffast-math -std=c++17
+CXXFLAGS = -O3 -march=native -ffast-math -std=c++17 -Iinclude
 
-SRC = src/main.cpp
+SRC = src/main.cpp src/vector_search.cpp
 OUT = build/engine
 
 all:

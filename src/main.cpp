@@ -3,8 +3,9 @@
 #include <random>
 #include <chrono>
 #include <algorithm>
-#include <arm_neon.h>
+
 #include <thread>
+#include "vector_search.h"
 
 using namespace std;
 
@@ -12,13 +13,7 @@ constexpr size_t DIM = 768;
 constexpr size_t NUM_VECTORS = 100000;
 constexpr size_t TOP_K = 5;
 
-float dot_product(const float* a, const float* b, size_t dim) {
-    float result = 0.0f;
-    for (size_t i = 0; i < dim; ++i) {
-        result += a[i] * b[i];
-    }
-    return result;
-}
+
 
 int main() {
     cout << "Generating embeddings..." << endl;
